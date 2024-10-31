@@ -1,0 +1,17 @@
+server {
+    listen 443 ssl default_server;
+    server_name _;
+
+    ssl_certificate /etc/nginx/server.crt;
+    ssl_certificate_key /etc/nginx/server.key;
+
+    location / {
+		add_header 'Content-Type' 'text/html' always;
+		return 400;
+    }
+
+	location /hc {
+		add_header 'Content-Type' 'text/plain' always;
+        return 200 "ok";
+	}
+}

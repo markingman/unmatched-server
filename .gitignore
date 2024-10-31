@@ -1,0 +1,5 @@
+.DS_Store
+.env
+nginx.conf
+server.crt
+server.key
