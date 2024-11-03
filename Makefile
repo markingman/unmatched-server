@@ -14,7 +14,7 @@ test:
 cert: ## Create self-signed certificate
 	@sh ./make_cert.sh
 
-conf: ## Compile nginx.conf
+conf: ## Compile nginx config
 	@sh ./make_config.sh
 
 tidy: ## Remove created and compiled files
