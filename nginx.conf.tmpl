@@ -6,13 +6,13 @@ server {
 	ssl_certificate_key /etc/nginx/server.key;
 
 	location / {
-		add_header 'Content-Type' 'text/html' always;
+		default_type 'text/html; charset=utf-8';
 		return 400;
 	}
 
 	location = /hc {
 		access_log off;
-		add_header 'Content-Type' 'text/plain' always;
+		default_type 'text/plain';
 		return 200 "ok";
 	}
 }
