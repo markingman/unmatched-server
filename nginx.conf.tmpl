@@ -16,3 +16,22 @@ server {
 		return 200 "ok";
 	}
 }
+
+server {
+	listen 443 ssl;
+	server_name example.com;
+
+	ssl_certificate /etc/nginx/server.crt;
+	ssl_certificate_key /etc/nginx/server.key;
+
+	location / {
+		default_type 'text/html; charset=utf-8';
+		return 200;
+	}
+
+	location = /hc {
+		access_log off;
+		default_type 'text/plain';
+		return 200 "ok";
+	}
+}
